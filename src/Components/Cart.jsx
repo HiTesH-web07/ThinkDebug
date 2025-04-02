@@ -4,6 +4,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { AddItem } from "../redux/cartSlice";
+import { toast } from "react-toastify";
 
 
 
@@ -31,7 +32,8 @@ function Cart({ id,name, image, price, category }) {
       </div>
 
       {/* Add to Cart Button */}
-      <button className="w-full bg-orange-500 rounded-lg text-white text-lg font-semibold hover:bg-orange-600 transition-all flex justify-center items-center py-2 mt-2" onClick={()=>dispatch(AddItem({id,name,image,price,qty:1}))}>
+      <button className="w-full bg-orange-500 rounded-lg text-white text-lg font-semibold hover:bg-orange-600 transition-all flex justify-center items-center py-2 mt-2" onClick={()=>{dispatch(AddItem({id,name,image,price,qty:1}));
+    toast.success( "Item Added")}}>
         <AiOutlineThunderbolt className="w-5 h-5 mr-2"/>
         Add to Cart
       </button>

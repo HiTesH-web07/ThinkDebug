@@ -40,8 +40,9 @@ const Nav = () => {
         </div>
 
         <span>|</span>
-        <div className='flex justify-center items-center rounded-md gap-1 cursor-pointer relative'>
-        <span className=" w-[15px] h-[15px] absolute bottom-5 left-1.5 bg-red-400 text-white font-bold flex justify-center items-center ">1</span>
+        <div className='flex justify-center items-center rounded-md gap-1 cursor-pointer relative '>
+          {items.length>0? <span className=" w-[15px] h-[15px] absolute bottom-5 left-1.5 bg-red-400 text-white font-bold flex justify-center items-center ">1</span>:null}
+       
         <FaHeart className='w-[15px] h-[15px]' />
         <span className='text-[18px]'>Wishlist</span>
         </div>
@@ -50,7 +51,8 @@ const Nav = () => {
         <div className='flex justify-center items-center rounded-md gap-1 cursor-pointer relative' onClick={()=>{
           setShowCart(true)
         }}>
-        <span className=" w-[15px] h-[15px] absolute bottom-5 left-1.5 bg-red-400 text-white font-bold flex justify-center items-center ">{items.length}</span>
+          {items.length>0?  <span className=" w-[15px] h-[15px] absolute bottom-5 left-1.5 bg-red-400 text-white font-bold flex justify-center items-center ">{items.length}</span>:null}
+      
         <FaShoppingCart className='w-[15px] h-[15px]'/>
         <span className='text-[18px]'>Cart</span>
         </div>
